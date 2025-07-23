@@ -7,27 +7,17 @@ import Link from 'next/link';
 const projects = [
 	{
 		id: 1,
-		title: 'E-Commerce Platform',
+		title: 'Transcendance',
 		description: 'A modern e-commerce platform built with Next.js and Stripe',
 		image: '/code.jpg',
+		githubLink: '#',
 	},
 	{
 		id: 2,
-		title: 'AI Chat Application',
-		description: 'Real-time chat application powered by OpenAI',
+		title: 'Printf Tester',
+		description: 'Tester for the ft_printf project for 42 school students',
 		image: '/laptop.jpg',
-	},
-	{
-		id: 3,
-		title: 'Task Management',
-		description: 'Collaborative task management tool with real-time updates',
-		image: '/code.jpg',
-	},
-	{
-		id: 4,
-		title: 'Portfolio Generator',
-		description: 'Dynamic portfolio generator for developers',
-		image: '/laptop.jpg',
+		githubLink: 'https://github.com/ejacquem/printfBetterTester',
 	},
 ];
 
