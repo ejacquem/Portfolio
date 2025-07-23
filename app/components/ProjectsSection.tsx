@@ -54,7 +54,7 @@ export default function ProjectsSection() {
 								<Link href="#" className="text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
 									View Project
 								</Link>
-								<Link href="#" className="text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
+								<Link href={project.githubLink} className="text-sm px-4 py-2 bg-white/10 hover:bg-white/20 rounded-full transition-colors">
 									GitHub
 								</Link>
 							</div>
