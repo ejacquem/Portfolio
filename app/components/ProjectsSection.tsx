@@ -9,14 +9,14 @@ const projects = [
 		id: 1,
 		title: 'Transcendance',
 		description: 'A modern e-commerce platform built with Next.js and Stripe',
-		image: '/code.jpg',
+		image: `code.jpg`,
 		githubLink: '#',
 	},
 	{
 		id: 2,
 		title: 'Printf Tester',
 		description: 'Tester for the ft_printf project for 42 school students',
-		image: '/laptop.jpg',
+		image: `laptop.jpg`,
 		githubLink: 'https://github.com/ejacquem/printfBetterTester',
 	},
 ];
