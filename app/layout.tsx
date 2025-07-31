@@ -38,11 +38,11 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: 'Lucas Jacquemin - Software Developer Portfolio',
 		description: 'Passionate software developer creating clean, minimal, and effective digital solutions. Explore my work and development philosophy.',
-		url: 'https://your-domain.com',
+		url: 'https://ljacquem.dev',
 		siteName: 'Lucas Jacquemin - Portfolio',
 		images: [
 			{
-				url: '/og-image.jpg',
+				url: 'PortfolioPreview.png',
 				width: 1200,
 				height: 630,
 				alt: 'Lucas Jacquemin - Modern Minimal Portfolio',
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
 		title: 'Lucas Jacquemin - Software Developer',
 		description: 'Passionate software developer creating clean, minimal, and effective digital solutions. Explore my work and development philosophy.',
 		creator: '@yourusername',
-		images: ['/og-image.jpg'],
+		images: ['PortfolioPreview.png'],
 	},
 	robots: {
 		index: true,

@@ -9,7 +9,7 @@ import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image';
 
 type PropType = {
-  slides: number[]
+  slides: string[]
   options?: EmblaOptionsType
 }
 
@@ -28,13 +28,13 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
     <section className="embla">
       <div className="embla__viewport" ref={emblaRef}>
         <div className="embla__container">
-          {slides.map((index) => (
+          {slides.map((url, index) => (
             <div className="embla__slide" key={index}>
               {/* <Image src={`https://picsum.photos/600/350?v=${index}`} alt={`Slide ${index}`} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" /> */}
               <img
                 className="embla__slide__img"
-                src={`https://picsum.photos/600/350?v=${index}`}
-                alt="Your alt text"
+                src={url}
+                alt={`Slide ${index}`}
               />
             </div>
           ))}
