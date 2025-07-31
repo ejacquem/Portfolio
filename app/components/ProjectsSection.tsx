@@ -3,7 +3,9 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import EmblaCarousel from './EmblaCarousel';
 import '@fortawesome/fontawesome-free/css/all.min.css';
+import { div } from 'framer-motion/client';
 
 const projects = [
 	{
@@ -17,6 +19,7 @@ const projects = [
 		link: '',
 		tech: ['Python','Django','HTML','CSS','JS','Bootstrap','Three.js','SQL'],
 		teamSize: 3,
+		slides: ['https://picsum.photos/600', 'https://picsum.photos/600'],
 	},
 	{
 		id: 2,
@@ -28,6 +31,7 @@ const projects = [
 		link: 'https://github.com/ejacquem/printfBetterTester',
 		tech: ['C','Makefile','Unit Test'],
 		teamSize: 1,
+		slides: ['https://picsum.photos/600', 'https://picsum.photos/600'],
 	},
 ];
 
@@ -55,6 +59,7 @@ export default function ProjectsSection() {
 			<div className="space-y-8 sm:space-y-12">
 				{projects.map((project) => {
 					const { icon, label } = getTeamIcon(project.teamSize);
+
 					return (
 
 						<motion.div
@@ -76,10 +81,10 @@ export default function ProjectsSection() {
 												<span title={label} className="text-sm px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full text-gray-200 inline-flex items-center"><i className={`fa-solid ${icon}`} /></span>
 												<span className="text-sm px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full text-gray-200 inline-flex items-center">{project.type}</span>
 										</div>
-										<p className="text-sm sm:text-base text-gray-400">{project.description}</p>
+										<p className="mt-1 text-sm sm:text-base text-gray-400">{project.description}</p>
 									</div>
 									<div>
-										<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Description</h4>
+										<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">What is it?</h4>
 										<p className="text-sm sm:text-base text-gray-200">{project.descriptionLong}</p>
 									</div>
 									<div>
@@ -92,18 +97,28 @@ export default function ProjectsSection() {
 											))}
 										</div>
 									</div>
+									{project.link && (
+										<div>
+											<Link href={project.link} className="text-sm px-4 py-2 border hover:bg-white/20 rounded-full transition-colors">
+											View Project <i className="fa-solid fa-arrow-right"></i>
+											</Link>
+										</div>
+									)}
 								</div>
 
 								<div className="relative h-full min-h-[300px] lg:min-h-full">
-									<Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-									<div className="absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40">
-									
-									<div className="absolute bottom-4 right-4">
+									<div className="flex items-center justify-center h-full">
+										<EmblaCarousel slides={[0, 1, 2]} options={{loop: true}}/>
+									</div>
+
+									{/* <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" /> */}
+									{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40"></div> */}
+									<div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40"></div>
+									{/* <div className="absolute bottom-4 right-4">
 										<Link href={project.link} className="text-sm px-4 py-2 border hover:bg-white/20 rounded-full transition-colors">
 											View Project <i className="fa-solid fa-arrow-right"></i>
 										</Link>
-									</div>
-									</div>
+									</div> */}
 								</div>
 							</div>
 						</div>
