@@ -237,7 +237,8 @@ export default function ProjectsSection() {
 									) : (
 										<Image src={project.slides[0]} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
 									)}
-								<div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40"></div>
+								{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40"></div> */}
+								<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,_#070810_0%,_transparent_10%,_transparent_90%,_#070810_100%)] lg:bg-[linear-gradient(to_right,_#070810_0%,_transparent_10%,_transparent_90%,_#070810_100%)]"></div>
 								</div>
 							</div>
 						</div>
