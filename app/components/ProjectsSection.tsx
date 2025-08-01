@@ -49,6 +49,18 @@ const projects = [
 		teamSize: 3,
 	},
 	{
+		title: 'Aimcore',
+		type: ProjectType.Personal,
+		description: 'Multiplayer Survival Arena Shooter',
+		descriptionLong: 'Aimcore is a fast-paced multiplayer game about surviving waves of enemies with increasing difficulty.\
+		The game is built with the Unity engine and implements various AI algorithms for the enemies, a main menu, visual and sound effects and a highscore system.\
+		We used Fusion 2 for the networking wich helped us implement lag compensation methdods to ensure smooth gameplay.',
+		slides: [],
+		link: 'https://siul008.itch.io/aimcore',
+		tech: ['C#', 'Unity', 'Blender', 'Audacity', 'Photon', 'Fusion 2'],
+		teamSize: 2,
+	},
+	{
 		title: 'Printf Tester',
 		type: ProjectType.Personal,
 		description: 'Tester For The 42 Project ft_printf ',
@@ -64,7 +76,7 @@ const projects = [
 		type: ProjectType.School,
 		description: 'Raycasting-Based 3D Engine Inspired by Wolfenstein',
 		descriptionLong: 'Cub3D is a project to create a simple 3D engine in C using raycasting. It transforms a 2D map into a 3D perspective from a first-person view. \
-		The goal is to navigate a maze-like map and find the exit before running out of oxygen.',
+		The goal is to navigate a maze-like map and find the exit while avoiding enemies.',
 		slides: ['pong.gif'],
 		link: '',
 		tech: ['C', 'Minilibx'],
@@ -75,9 +87,9 @@ const projects = [
 		type: ProjectType.School,
 		description: 'Sorting Algorithm Challenge with Limited Instructions',
 		descriptionLong: 'Push Swap is a challenge that requires sorting a list of integers using a limited set of stack operations (like push, swap, rotate). \
-		We developed a sorting algorithm that minimizes the number of operations needed. I implemented several sorting strategies and optimization passes.',
-		slides: ['https://picsum.photos/600/350?random=12'],
-		link: 'https://github.com/siul008/PushSwap',
+		It uses a sorting algorithm that minimizes the number of operations needed.',
+		slides: [],
+		link: '',
 		tech: ['C'],
 		teamSize: 1,
 	},
@@ -87,7 +99,7 @@ const projects = [
 		description: 'Puzzle Game Made in 2 Week for LGX Game Jam',
 		descriptionLong: '42 Seconds is a fast-paced puzzle game developed for the LGX game jam in under one week. \
 		The player must solve short puzzles under a strict 42-second time limit. Built with Unity, it emphasizes intuitive design, accessibility, and polished user experience.',
-		slides: ['https://picsum.photos/600/350?random=13'],
+		slides: [],
 		link: 'https://ejacquem.itch.io/42seconds',
 		tech: ['C#', 'Unity', 'Blender', 'Audacity'],
 		teamSize: 6,
@@ -99,7 +111,7 @@ const projects = [
 		descriptionLong: 'Elements Keeper was built during a 72-hour game jam with the theme "Shadow and Alchemy". \
 		It\'s a tower defense game where players mix elements to create towers that defend against waves of enemies. \
 		The game won #1 in Playability.',
-		slides: ['https://picsum.photos/600/350?random=14'],
+		slides: [],
 		link: 'https://ejacquem.itch.io/elements-keeper',
 		tech: ['C#', 'Unity', 'Krita', 'Audacity', 'FL Studio'],
 		teamSize: 3,
@@ -111,7 +123,7 @@ const projects = [
 		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
 		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
 		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
-		slides: ['https://picsum.photos/600/350?random=15'],
+		slides: [],
 		link: 'https://github.com/ejacquem/exolegend',
 		tech: ['C++'],
 		teamSize: 3,
@@ -123,7 +135,7 @@ const projects = [
 		descriptionLong: 'Minishell is a minimal shell implemented in C, mimicking core behavior of Bash. \
 		It supports command execution, redirections, piping, environment variable handling, and signal management. \
 		My work included the lexer/parser logic, built-in command implementations, and memory management.',
-		slides: ['https://picsum.photos/600/350?random=16'],
+		slides: [],
 		link: '',
 		tech: ['C', 'Linux', 'Unix', 'Bash'],
 		teamSize: 2,
@@ -135,9 +147,63 @@ const projects = [
 		descriptionLong: 'Webserv is a fully functioning HTTP server written in C++98. \
 		It supports multiple concurrent client connections using poll(), serves static files, \
 		and executes dynamic content using CGI for scripts (e.g. Python, PHP).',
-		slides: ['https://picsum.photos/600/350?random=17'],
+		slides: [],
 		link: '',
 		tech: ['C++', 'HTTP', 'CGI'],
+		teamSize: 2,
+	},
+	{
+		title: 'Malloc',
+		type: ProjectType.School,
+		description: 'Dynamic Memory Allocation Algorithm',
+		descriptionLong: 'Malloc is a low-level memory management project implemented in C. \
+		It involves designing and building a custom dynamic memory allocator that efficiently \
+		handles allocation, deallocation, and fragmentation. The project focuses on implementing \
+		malloc, free, and realloc functions, focusing on memory efficiency and performance optimization.',
+		slides: [],
+		link: '',
+		tech: ['C', 'Makefile'],
+		teamSize: 1,
+	},
+	{
+		title: 'Shaderpixel',
+		type: ProjectType.School,
+		description: 'Real-time 3D shaders and procedural effects.',
+		descriptionLong: 'ShaderPixel is a real-time GPU graphics project developed using Rust, Vulkan, and GLSL. \
+		It features advanced 3D shaders that render complex fractals, volumetric raymarching effects, \
+		and dynamic lighting entirely on the GPU. The project offers an interactive 3D environment to explore \
+		a variety of shader-based visual effects such as translucent materials, volumetric clouds with shadows, \
+		and detailed fractal objects like mandelboxes',
+		slides: [],
+		link: '',
+		tech: ['Rust', 'Vulkan', 'GLSL', 'Makefile'],
+		teamSize: 2,
+	},
+	{
+		title: 'Fractol',
+		type: ProjectType.School,
+		description: 'Fractal Rendering in C with MiniLibX',
+		descriptionLong: 'Fractol is a graphical tool for rendering fractals using C \
+		and the MiniLibX library. The project focuses on generating and displaying complex \
+		mathematical structures like the Mandelbrot and Julia sets. It features real-time zooming, \
+		mouse and keyboard interactions, and custom parameter inputs to explore different fractal variants.',
+		slides: [],
+		link: '',
+		tech: ['C', 'MiniLibX', 'Makefile'],
+		teamSize: 1,
+		
+	},
+	{
+		title: '42 Luxembourg Leaderboard',
+		type: ProjectType.Personal,
+		description: 'Student Ranking Web Application',
+		descriptionLong: '42 Luxembourg Leaderboard is a web-based application that \
+		fetches real-time student data from the 42 school API and dynamically ranks users based on criteria \
+		such as experience level, total logtime, or evaluation points. The project provides an \
+		interactive interface for exploring and comparing student data.',
+		slides: [],
+		link: '',
+		tech: ['JavaScript', 'CSS', 'API'],
 		teamSize: 2,
 	},
 	{
@@ -149,7 +215,7 @@ const projects = [
 		slides: ['PortfolioPreview.png'],
 		link: 'https://ljacquem.dev',
 		tech: ['Next.js', 'Tailwind CSS', 'Typescript', 'React'],
-		teamSize: 2,
+		teamSize: 1,
 		descriptionComponent: portfolioDescription,
 	},
 ];
@@ -186,11 +252,11 @@ export default function ProjectsSection() {
 							initial={{ opacity: 0, y: 20 }}
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
-							transition={{ duration: 0.6, delay: index * 0.1 }}
+							transition={{ duration: 0.6, delay: index * 0.05 }}
 							// whileHover={{ scale: 1.02 }}
 							// className="group relative aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden"
 						>
-						<div key={project.title} className="bg-[#070810] rounded-lg overflow-hidden">
+						<div key={project.title} className="bg-[#0a0d18] rounded-lg overflow-hidden">
 
 							<div className="grid grid-cols-1 lg:grid-cols-2">
 								<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
@@ -234,10 +300,14 @@ export default function ProjectsSection() {
 											<EmblaCarousel slides={project.slides} options={{loop: true}}/>
 										</div>
 									) : (
-										<Image src={project.slides[0]} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+										project.slides.length == 1 ? (
+											<Image src={project.slides[0]} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+										) :  (
+											<div className="embla__slide" key={index}></div>
+										)
 									)}
-								{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#070810] via-transparent to-transparent lg:via-[#070810]/20 lg:to-[#070810]/40"></div> */}
-								<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,_#070810_0%,_transparent_10%,_transparent_90%,_#070810_100%)] lg:bg-[linear-gradient(to_right,_#070810_0%,_transparent_10%,_transparent_90%,_#070810_100%)]"></div>
+								{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0d18] via-transparent to-transparent lg:via-[#0a0d18]/20 lg:to-[#0a0d18]/40"></div> */}
+								<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,_#0a0d18_0%,_transparent_10%,_transparent_90%,_#0a0d18_100%)] lg:bg-[linear-gradient(to_right,_#0a0d18_0%,_transparent_10%,_transparent_90%,_#0a0d18_100%)]"></div>
 								</div>
 							</div>
 						</div>
