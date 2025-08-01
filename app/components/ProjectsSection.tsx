@@ -5,11 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import EmblaCarousel from './EmblaCarousel';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { div } from 'framer-motion/client';
 
 const portfolioDescription = (
 	<p className="text-sm text-gray-400">
-	  This portfolio showcases the most significant projects I've completed during my learning journey. I've used and modified a template from{' '}
+	  This portfolio showcases the most significant projects I&apos;ve completed during my learning journey. I&apos;ve used and modified a template from{' '}
 	  <a
 		href="https://www.devportfoliotemplates.com/"
 		target="_blank"
