@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
 	title: 'Lucas Jacquemin - Software Developer',
 	description:
-		'Welcome to my portfolio! I am a passionate software developer with a focus on clean, minimal, and effective solutions. I believe in the power of simplicity and thoughtful design to create impactful digital experiences.',
+		'Passionate computer science student at 42 Luxembourg. Explore a collection of projects from my learning journey.',
 	keywords: [
 		'Software Developer',
 		'Clean Code',
@@ -37,12 +37,12 @@ export const metadata: Metadata = {
 	creator: 'Lucas Jacquemin',
 	openGraph: {
 		title: 'Lucas Jacquemin - Software Developer Portfolio',
-		description: 'Passionate software developer creating clean, minimal, and effective digital solutions. Explore my work and development philosophy.',
+		description: 'Passionate computer science student at 42 Luxembourg. Explore a collection of projects from my learning journey.',
 		url: 'https://ljacquem.dev',
 		siteName: 'Lucas Jacquemin - Portfolio',
 		images: [
 			{
-				url: 'PortfolioPreview.png',
+				url: 'https://ljacquem.dev/PortfolioPreview.png',
 				width: 1200,
 				height: 630,
 				alt: 'Lucas Jacquemin - Modern Minimal Portfolio',
@@ -54,9 +54,9 @@ export const metadata: Metadata = {
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Lucas Jacquemin - Software Developer',
-		description: 'Passionate software developer creating clean, minimal, and effective digital solutions. Explore my work and development philosophy.',
+		description: 'Passionate computer science student at 42 Luxembourg. Explore a collection of projects from my learning journey.',
 		creator: '@yourusername',
-		images: ['PortfolioPreview.png'],
+		images: ['https://ljacquem.dev/PortfolioPreview.png'],
 	},
 	robots: {
 		index: true,
