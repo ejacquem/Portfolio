@@ -78,38 +78,41 @@ const projects = [
 		teamSize: 2,
 	},
 	{
-		title: 'Printf Tester',
+		title: '42 Luxembourg Leaderboard',
 		type: ProjectType.Personal,
-		description: 'Tester For The 42 Project ft_printf ',
-		descriptionLong: 'The project ft_print requires the recreation of the C function prtinf(). The tester will take the output of the custom printf funcition\
-		and compare the result with the real function. It will print in the terminal the result of the comparison in a clean and readable format.',
-		slides: ['Printf_Tester.png'],
-		link: 'https://github.com/ejacquem/printfBetterTester',
-		tech: ['C','Makefile','Unit Test'],
-		teamSize: 1,
-	},
-	{
-		title: 'Cub3D',
-		type: ProjectType.School,
-		description: 'MultiThreading Raycasting-Based 3D Engine',
-		descriptionLong: 'Cub3D is a project to create a simple 3D engine in C using raycasting. It transforms a 2D map into a 3D perspective from a first-person view. \
-		The goal is to navigate a maze-like map and find the exit while avoiding enemies.',
-		slides: ['Cub3d.gif', 'Cub3d.png', 'Cub3d_Menu.png'],
+		description: 'Student Ranking Web Application',
+		descriptionLong: '42 Luxembourg Leaderboard is a web-based application that \
+		fetches real-time student data from the 42 school API and dynamically ranks users based on criteria \
+		such as experience level, total logtime, or evaluation points. The project provides an \
+		interactive interface for exploring and comparing student data.',
+		slides: ['42LeaderboardAnon.png'],
 		link: '',
-		tech: ['C', 'Minilibx'],
+		tech: ['JavaScript', 'CSS', 'HTML', 'API'],
 		teamSize: 2,
 	},
 	{
-		title: 'Push Swap',
+		title: 'Webserv',
 		type: ProjectType.School,
-		description: 'Sorting Algorithm Challenge with Limited Instructions',
-		descriptionLong: 'Push Swap is a challenge that requires sorting a list of integers using a limited set of stack operations (like push, swap, rotate). \
-		It uses a sorting algorithm that minimizes the number of operations needed.',
-		slides: [],
+		description: 'HTTP Server in C++98 with CGI Support',
+		descriptionLong: 'Webserv is a fully functioning HTTP server written in C++98. \
+		It supports multiple concurrent client connections using poll(), serves static files, \
+		and executes dynamic content using CGI for scripts (e.g. Python, PHP).',
+		slides: ['Webserv_Home.png', 'Webserv_Dirlist.png', 'Webserv_Terminal.png'],
 		link: '',
-		tech: ['C'],
-		teamSize: 1,
+		tech: ['C++', 'HTTP', 'CGI'],
+		teamSize: 2,
 	},
+	// {
+	// 	title: 'Push Swap',
+	// 	type: ProjectType.School,
+	// 	description: 'Sorting Algorithm Challenge with Limited Instructions',
+	// 	descriptionLong: 'Push Swap is a challenge that requires sorting a list of integers using a limited set of stack operations (like push, swap, rotate). \
+	// 	It uses a sorting algorithm that minimizes the number of operations needed.',
+	// 	slides: [],
+	// 	link: '',
+	// 	tech: ['C'],
+	// 	teamSize: 1,
+	// },
 	{
 		title: '42 Seconds',
 		type: ProjectType.Personal,
@@ -132,55 +135,6 @@ const projects = [
 		link: 'https://ejacquem.itch.io/elements-keeper',
 		tech: ['C#', 'Unity', 'Krita', 'Audacity', 'FL Studio'],
 		teamSize: 3,
-	},
-	{
-		title: 'Exolegend',
-		type: ProjectType.Personal,
-		description: 'AI Bot for Real-Time Maze Arena in Hackathon',
-		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
-		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
-		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
-		slides: [],
-		link: 'https://github.com/ejacquem/exolegend',
-		tech: ['C++'],
-		teamSize: 3,
-	},
-	{
-		title: 'Minishell',
-		type: ProjectType.School,
-		description: 'Unix Shell Clone Built From Scratch in C',
-		descriptionLong: 'Minishell is a minimal shell implemented in C, mimicking core behavior of Bash. \
-		It supports command execution, redirections, piping, environment variable handling, and signal management. \
-		My work included the lexer/parser logic, built-in command implementations, and memory management.',
-		slides: [],
-		link: '',
-		tech: ['C', 'Linux', 'Unix', 'Bash'],
-		teamSize: 2,
-	},
-	{
-		title: 'Webserv',
-		type: ProjectType.School,
-		description: 'HTTP Server in C++98 with CGI Support',
-		descriptionLong: 'Webserv is a fully functioning HTTP server written in C++98. \
-		It supports multiple concurrent client connections using poll(), serves static files, \
-		and executes dynamic content using CGI for scripts (e.g. Python, PHP).',
-		slides: [],
-		link: '',
-		tech: ['C++', 'HTTP', 'CGI'],
-		teamSize: 2,
-	},
-	{
-		title: 'Malloc',
-		type: ProjectType.School,
-		description: 'Dynamic Memory Allocation Algorithm',
-		descriptionLong: 'Malloc is a low-level memory management project implemented in C. \
-		It involves designing and building a custom dynamic memory allocator that efficiently \
-		handles allocation, deallocation, and fragmentation. The project focuses on implementing \
-		malloc, free, and realloc functions, focusing on memory efficiency and performance optimization.',
-		slides: ['Malloc_Terminal.png'],
-		link: 'https://github.com/ejacquem/malloc',
-		tech: ['C', 'Makefile'],
-		teamSize: 1,
 	},
 	{
 		title: 'Shaderpixel',
@@ -211,16 +165,62 @@ const projects = [
 		teamSize: 1,
 	},
 	{
-		title: '42 Luxembourg Leaderboard',
+		title: 'Malloc',
+		type: ProjectType.School,
+		description: 'Dynamic Memory Allocation Algorithm',
+		descriptionLong: 'Malloc is a low-level memory management project implemented in C. \
+		It involves designing and building a custom dynamic memory allocator that efficiently \
+		handles allocation, deallocation, and fragmentation. The project focuses on implementing \
+		malloc, free, and realloc functions, focusing on memory efficiency and performance optimization.',
+		slides: ['Malloc_Terminal.png'],
+		link: 'https://github.com/ejacquem/malloc',
+		tech: ['C', 'Makefile'],
+		teamSize: 1,
+	},
+	{
+		title: 'Exolegend',
 		type: ProjectType.Personal,
-		description: 'Student Ranking Web Application',
-		descriptionLong: '42 Luxembourg Leaderboard is a web-based application that \
-		fetches real-time student data from the 42 school API and dynamically ranks users based on criteria \
-		such as experience level, total logtime, or evaluation points. The project provides an \
-		interactive interface for exploring and comparing student data.',
-		slides: ['42LeaderboardAnon.png'],
+		description: 'AI Bot for Real-Time Maze Arena in Hackathon',
+		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
+		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
+		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
+		slides: [],
+		link: 'https://github.com/ejacquem/exolegend',
+		tech: ['C++'],
+		teamSize: 3,
+	},
+	{
+		title: 'Cub3D',
+		type: ProjectType.School,
+		description: 'MultiThreading Raycasting-Based 3D Engine',
+		descriptionLong: 'Cub3D is a project to create a simple 3D engine in C using raycasting. It transforms a 2D map into a 3D perspective from a first-person view. \
+		The goal is to navigate a maze-like map and find the exit while avoiding enemies.',
+		slides: ['Cub3d.gif', 'Cub3d.png', 'Cub3d_Menu.png'],
 		link: '',
-		tech: ['JavaScript', 'CSS', 'HTML', 'API'],
+		tech: ['C', 'Minilibx'],
+		teamSize: 2,
+	},
+	{
+		title: 'Printf Tester',
+		type: ProjectType.Personal,
+		description: 'Tester For The 42 Project ft_printf ',
+		descriptionLong: 'The project ft_print requires the recreation of the C function prtinf(). The tester will take the output of the custom printf funcition\
+		and compare the result with the real function. It will print in the terminal the result of the comparison in a clean and readable format.',
+		slides: ['Printf_Tester.png'],
+		link: 'https://github.com/ejacquem/printfBetterTester',
+		tech: ['C','Makefile','Unit Test'],
+		teamSize: 1,
+	},
+	{
+		title: 'Minishell',
+		type: ProjectType.School,
+		description: 'Unix Shell Clone Built From Scratch in C',
+		descriptionLong: 'Minishell is a minimal shell implemented in C, mimicking core behavior of Bash. \
+		It supports command execution, redirections, piping, environment variable handling, and signal management. \
+		My work included the lexer/parser logic, built-in command implementations, and memory management.',
+		slides: [],
+		link: '',
+		tech: ['C', 'Linux', 'Unix', 'Bash'],
 		teamSize: 2,
 	},
 	{
