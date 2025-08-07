@@ -120,10 +120,11 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
             </div>
           ))}
         </div>
-        <div className="absolute top-1/2 left-[10%] -translate-x-1/2 -translate-y-1/2 p-8 rounded z-10">
+        {/* hover:bg-white/5 transition-color duration-300 rounded-full -> for visible button */}
+        <div className="absolute left-0 top-1/2 -translate-y-1/2 rounded z-10">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
         </div>
-        <div className="absolute top-1/2 left-[90%] -translate-x-1/2 -translate-y-1/2 p-8 rounded z-10">
+        <div className="absolute right-0 top-1/2 -translate-y-1/2 rounded z-10">
           <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
