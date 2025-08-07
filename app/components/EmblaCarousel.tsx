@@ -5,11 +5,11 @@ import {
   EmblaOptionsType
 } from 'embla-carousel'
 import useEmblaCarousel from 'embla-carousel-react'
-// import {
-//   NextButton,
-//   PrevButton,
-//   usePrevNextButtons
-// } from './EmblaCarouselArrowButtons'
+import {
+  NextButton,
+  PrevButton,
+  usePrevNextButtons
+} from './EmblaCarouselArrowButtons'
 
 const TWEEN_FACTOR_BASE = 0.2
 
@@ -27,12 +27,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
   const tweenFactor = useRef(0)
   const tweenNodes = useRef<HTMLElement[]>([])
 
-  // const {
-  //   prevBtnDisabled,
-  //   nextBtnDisabled,
-  //   onPrevButtonClick,
-  //   onNextButtonClick
-  // } = usePrevNextButtons(emblaApi)
+  const {
+    prevBtnDisabled,
+    nextBtnDisabled,
+    onPrevButtonClick,
+    onNextButtonClick
+  } = usePrevNextButtons(emblaApi)
 
   const setTweenNodes = useCallback((emblaApi: EmblaCarouselType): void => {
     tweenNodes.current = emblaApi.slideNodes().map((slideNode) => {
@@ -119,6 +119,12 @@ const EmblaCarousel: React.FC<PropType> = (props) => {
               />
             </div>
           ))}
+        </div>
+        <div className="absolute top-1/2 left-[10%] -translate-x-1/2 -translate-y-1/2 p-8 rounded z-10">
+          <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
+        </div>
+        <div className="absolute top-1/2 left-[90%] -translate-x-1/2 -translate-y-1/2 p-8 rounded z-10">
+          <NextButton onClick={onNextButtonClick} disabled={nextBtnDisabled} />
         </div>
       </div>
 
