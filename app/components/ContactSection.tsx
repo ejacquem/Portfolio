@@ -55,7 +55,7 @@ export default function ContactSection() {
 						</svg>
 						<span>Get in Touch</span>
 					</a>
-					<a
+					{/* <a
 						href="/resume.pdf"
 						target="_blank"
 						className="group flex items-center gap-2 px-6 py-3 bg-white/5 rounded-full hover:bg-white/10 transition-colors w-full sm:w-auto"
@@ -66,7 +66,7 @@ export default function ContactSection() {
 							<path d="M8 7a1 1 0 100 2h4a1 1 0 100-2H8z" />
 						</svg>
 						<span>View Resume</span>
-					</a>
+					</a> */}
 				</motion.div>
 
 				<motion.div

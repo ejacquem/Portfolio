@@ -32,6 +32,22 @@ export default function HeroSection() {
 				>
 					Software Developer
 				</motion.p>
+				<motion.p
+					initial={{ y: 50, opacity: 0 }}
+					animate={{ y: 0, opacity: 1 }}
+					transition={{ duration: 0.8, delay: 0.4 }}
+					className="max-w-2xl mx-auto text-xs md:text-sm text-gray-300 mb-8 px-4"
+				>
+					Hi! I&apos;m Lucas.
+					<br /><br />
+					I&apos;m a computer science student at 42 Luxembourg with a strong interest in software development and problem solving. I enjoy building things from scratch and diving into complex challenges, whether it&apos;s writing algorithms, making games for fun, or exploring visual projects like rendering fractals.
+					<br /><br />
+					Before 42, I studied computer science at university, but I chose to continue my journey at 42 because of its learn-by-practice approach. It pushed me to become independent, adaptable, and resourceful. Every project there required me to learn new technologies on my own, work with others, and quickly get up to speed with unfamiliar tools or languages.
+					<br /><br />
+					I&apos;m most comfortable in the C family of languages (C, C++, C#), but I&apos;ve also worked with Java, Python, Rust, and JavaScript. One of the projects I&apos;m most proud of is Transcendance, a full-stack multiplayer web app we built from scratch at 42. It includes user accounts, profiles, ranking, and real-time games against players or bots. We used Django for the backend, Bootstrap and JavaScript for the frontend, and Python for the game logic and networking.
+					<br /><br />
+					I&apos;m looking for a junior developer position where I can contribute to meaningful projects, learn from a team, and grow as a developer.
+				</motion.p>
 			</div>
 
 			<motion.div
