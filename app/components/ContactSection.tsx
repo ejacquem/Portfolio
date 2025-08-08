@@ -15,7 +15,7 @@ export default function ContactSection() {
 				>
 					Let&apos;s Connect
 				</motion.h2>
-				<motion.p
+				{/* <motion.p
 					initial={{ opacity: 0, y: 20 }}
 					whileInView={{ opacity: 1, y: 0 }}
 					viewport={{ once: true }}
@@ -23,7 +23,7 @@ export default function ContactSection() {
 					className="text-gray-300 mb-6"
 				>
 					Have a project in mind? Let&apos;s create something amazing together.
-				</motion.p>
+				</motion.p> */}
 
 				<motion.div
 					initial={{ opacity: 0, y: 20 }}
