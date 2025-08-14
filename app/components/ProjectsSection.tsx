@@ -184,7 +184,7 @@ const projects = [
 		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
 		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
 		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
-		slides: [],
+		slides: ['Exolegend.gif', 'Exolegend_Robot.jpg', 'Exolegend_Arena.png'],
 		link: 'https://github.com/ejacquem/exolegend',
 		tech: ['C++'],
 		teamSize: 3,
