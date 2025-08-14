@@ -220,7 +220,19 @@ const projects = [
 		My work included the lexer/parser logic, built-in command implementations, and memory management.',
 		slides: [],
 		link: '',
-		tech: ['C', 'Linux', 'Unix', 'Bash'],
+		tech: ['C', 'Makefile', 'Linux', 'Unix', 'Bash'],
+		teamSize: 2,
+	},
+	{
+		title: 'Expert System',
+		type: ProjectType.School,
+		description: 'Propositionnal Logic Solver',
+		descriptionLong: 'Logic engine that parses a custom rule syntax and applies propositional calculus with backward \
+		chaining to determine the truth values of queries. Supports AND, OR, XOR, NOT, parentheses, and biconditionals. \
+		The input file is tokenized and an abstract syntax tree is used to solve the expressions.',
+		slides: ['Expert_System.png'],
+		link: '',
+		tech: ['C++', 'Makefile'],
 		teamSize: 2,
 	},
 	{
