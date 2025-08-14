@@ -1,6 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import EmblaCarousel from './EmblaCarousel';
@@ -8,34 +9,34 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 
 const portfolioDescription = (
 	<p className="text-sm text-gray-400">
-	  This portfolio showcases the most significant projects I&apos;ve completed during my learning journey. I&apos;ve used and modified a template from{' '}
-	  <a
-		href="https://www.devportfoliotemplates.com/"
-		target="_blank"
-		rel="noopener noreferrer"
-		className="underline text-blue-400 hover:text-blue-300"
-	  >
-		Dev Portfolio Templates
-	  </a>.
+		This portfolio showcases the most significant projects I&apos;ve completed during my learning journey. I&apos;ve used and modified a template from{' '}
+		<a
+			href="https://www.devportfoliotemplates.com/"
+			target="_blank"
+			rel="noopener noreferrer"
+			className="underline text-blue-400 hover:text-blue-300"
+		>
+			Dev Portfolio Templates
+		</a>.
 	</p>
-  )
-  const shaderDescription = (
-	  <p className="text-sm text-gray-400">
-		ShaderPixel is a real-time GPU graphics project developed using Rust, Vulkan, and GLSL. 
-		It features advanced 3D shaders that render complex fractals, volumetric raymarching effects, 
-		and dynamic lighting entirely on the GPU. The project offers an interactive 3D environment to explore 
-		a variety of shader-based visual effects such as translucent materials, volumetric clouds with shadows, 
+)
+const shaderDescription = (
+	<p className="text-sm text-gray-400">
+		ShaderPixel is a real-time GPU graphics project developed using Rust, Vulkan, and GLSL.
+		It features advanced 3D shaders that render complex fractals, volumetric raymarching effects,
+		and dynamic lighting entirely on the GPU. The project offers an interactive 3D environment to explore
+		a variety of shader-based visual effects such as translucent materials, volumetric clouds with shadows,
 		and detailed fractal objects like mandelboxes. Some of the shader I made are visible on {' '}
 		<a
-		  href="https://www.shadertoy.com/user/ejacquem"
-		  target="_blank"
-		  rel="noopener noreferrer"
-		  className="underline text-blue-400 hover:text-blue-300"
+			href="https://www.shadertoy.com/user/ejacquem"
+			target="_blank"
+			rel="noopener noreferrer"
+			className="underline text-blue-400 hover:text-blue-300"
 		>
-		  my ShaderToy account
+			my ShaderToy account
 		</a>.
-	  </p>
-	)
+	</p>
+)
 
 enum ProjectType {
 	School = '42 Project',
@@ -62,7 +63,7 @@ const projects = [
 		The frontend is made with JavaScript and Three.js for immersive 3D rendering, while the backend is made with Python and Django to manage real-time game logic and user authentication seamlessly.',
 		slides: ['Pong.gif', 'Pong_Home.png', 'Pong_Games.png', 'Pong_Customize.png', 'Pong_Dashboard.png', 'Pong_Inverted_Blue.png', 'Pong_Red.png'],
 		link: '',
-		tech: ['Python','Django','HTML','CSS','JS','Bootstrap','Three.js','SQL'],
+		tech: ['Python', 'Django', 'HTML', 'CSS', 'JS', 'Bootstrap', 'Three.js', 'SQL'],
 		teamSize: 3,
 	},
 	{
@@ -87,7 +88,7 @@ const projects = [
 		interactive interface for exploring and comparing student data.',
 		slides: ['42LeaderboardAnon.png'],
 		link: '',
-		tech: ['JavaScript', 'CSS', 'HTML', 'API'],
+		tech: ['HTML', 'CSS', 'JS', 'API'],
 		teamSize: 2,
 	},
 	{
@@ -131,7 +132,7 @@ const projects = [
 		descriptionLong: 'Elements Keeper was built during a 72-hour game jam with the theme "Shadow and Alchemy". \
 		It\'s a tower defense game where players mix elements to create towers that defend against waves of enemies. \
 		The game won #1 in Playability.',
-		slides: ['EK_Menu.png', 'EK_Game.png', 'EK_Craft.png', ],
+		slides: ['EK_Menu.png', 'EK_Game.png', 'EK_Craft.png',],
 		link: 'https://ejacquem.itch.io/elements-keeper',
 		tech: ['C#', 'Unity', 'Krita', 'Audacity', 'FL Studio'],
 		teamSize: 3,
@@ -208,7 +209,7 @@ const projects = [
 		and compare the result with the real function. It will print in the terminal the result of the comparison in a clean and readable format.',
 		slides: ['Printf_Tester.png'],
 		link: 'https://github.com/ejacquem/printfBetterTester',
-		tech: ['C','Makefile','Unit Test'],
+		tech: ['C', 'Makefile', 'Unit Test'],
 		teamSize: 1,
 	},
 	{
@@ -257,9 +258,56 @@ const getTeamIcon = (teamSize: number) => {
 	return { icon: 'fa-users', label: `Team Project (${teamSize})` };
 };
 
+const techCategories = [
+	{ label: 'All', value: 'all' },
+	{ label: 'C/C++', value: 'c-cpp' },
+	{ label: 'C#', value: 'csharp' },
+	{ label: 'Java', value: 'java' },
+	{ label: 'Python', value: 'python' },
+	{ label: 'Rust', value: 'rust' },
+	{ label: 'HTML/CSS/JS', value: 'web' },
+];
+
 export default function ProjectsSection() {
+	const [selectedTechs, setSelectedTechs] = useState<string[]>(['all']);
+
+	const handleCheckboxChange = (value: string) => {
+		if (value === 'all') {
+			// Selecting "All" clears others and shows everything
+			setSelectedTechs(['all']);
+		} else {
+			let newSelected = selectedTechs.includes(value)
+				? selectedTechs.filter(v => v !== value)
+				: [...selectedTechs.filter(v => v !== 'all'), value];
+
+			setSelectedTechs(newSelected.length ? newSelected : ['all']);
+		}
+	};
+
+	// Map filter values to actual tech keywords
+	const techMap: Record<string, string[]> = {
+		'c-cpp': ['c', 'c++'],
+		'csharp': ['c#'],
+		'java': ['java'],
+		'python': ['python'],
+		'rust': ['rust'],
+		'web': ['html', 'css', 'js', 'javascript', 'typescript'],
+	};
+
+	const filteredProjects = projects.filter(project => {
+		if (selectedTechs.includes('all')) return true;
+		return project.tech?.some(t =>
+			selectedTechs.some(selected =>
+				techMap[selected]?.some(keyword =>
+					t.toLowerCase() === keyword
+				)
+			)
+		);
+	});
+
 	return (
 		<section className="py-12 md:py-20 px-4 max-w-7xl mx-auto">
+
 			<motion.h2
 				initial={{ opacity: 0, y: 20 }}
 				whileInView={{ opacity: 1, y: 0 }}
@@ -270,8 +318,42 @@ export default function ProjectsSection() {
 				Featured Projects
 			</motion.h2>
 
+			<div className="mb-8">
+				{/* Title + line */}
+				{/* <div className="flex items-center gap-4 mb-4">
+					<h3 className="text-white text-lg font-semibold whitespace-nowrap">
+						Filter Technologies
+					</h3>
+					<hr className="flex-grow border-t border-white/30" />
+				</div> */}
+
+				{/* Filter pills */}
+				<div className="flex flex-wrap gap-3 justify-center">
+					{techCategories.map(cat => (
+						<label
+							key={cat.value}
+							className="cursor-pointer"
+						>
+							<input
+								type="checkbox"
+								className="peer hidden"
+								checked={selectedTechs.includes(cat.value)}
+								onChange={() => handleCheckboxChange(cat.value)}
+							/>
+							<span className="
+								px-4 py-1 rounded-full text-white bg-white/10
+								peer-checked:bg-white peer-checked:text-black
+								transition-colors duration-200
+							">
+								{cat.label}
+							</span>
+						</label>
+					))}
+				</div>
+			</div>
+
 			<div className="space-y-8 sm:space-y-12">
-				{projects.map((project, index) => {
+				{filteredProjects.map((project, index) => {
 					const { icon, label } = getTeamIcon(project.teamSize);
 
 					return (
@@ -282,51 +364,51 @@ export default function ProjectsSection() {
 							whileInView={{ opacity: 1, y: 0 }}
 							viewport={{ once: true }}
 							transition={{ duration: 0.6, delay: index * 0.05 }}
-							// whileHover={{ scale: 1.02 }}
-							// className="group relative aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden"
+						// whileHover={{ scale: 1.02 }}
+						// className="group relative aspect-video bg-gradient-to-br from-purple-900/50 to-blue-900/50 rounded-xl overflow-hidden"
 						>
-						<div key={project.title} className="bg-[#0a0d18] rounded-lg overflow-hidden">
+							<div key={project.title} className="bg-[#0a0d18] rounded-lg overflow-hidden">
 
-							<div className="grid grid-cols-1 lg:grid-cols-2">
-								<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
-									<div>
-										<div className="flex flex-wrap gap-2">
+								<div className="grid grid-cols-1 lg:grid-cols-2">
+									<div className="p-4 sm:p-6 space-y-4 sm:space-y-6">
+										<div>
+											<div className="flex flex-wrap gap-2">
 												<h3 className="text-xl sm:text-2xl font-bold">{project.title}</h3>
 												<span title={label} className="text-sm px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full text-gray-200 inline-flex items-center"><i className={`fa-solid ${icon}`} /></span>
 												<span className="text-sm px-3 py-1 bg-white/5 hover:bg-white/10 rounded-full text-gray-200 inline-flex items-center">{project.type}</span>
+											</div>
+											<p className="mt-1 text-sm sm:text-base text-gray-400">{project.description}</p>
 										</div>
-										<p className="mt-1 text-sm sm:text-base text-gray-400">{project.description}</p>
-									</div>
-									<div>
-										<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">What is it?</h4>
-										{project.descriptionComponent ?? (
-											<p className="text-sm sm:text-base text-gray-200">{project.descriptionLong}</p>
-										)}
-										{/* <p className="text-sm sm:text-base text-gray-200">{project.descriptionLong}</p> */}
-									</div>
-									<div>
-										<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Technology used</h4>
-										<div className="flex flex-wrap gap-2">
-											{project.tech.map((tech, i) => (
-												<span key={i} className="text-sm px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full">
-													{tech}
-												</span>
-											))}
-										</div>
-									</div>
-									{project.link && (
 										<div>
-											<Link href={project.link} className="text-sm px-4 py-2 border hover:bg-white/20 rounded-full transition-colors">
-											View Project <i className="fa-solid fa-arrow-right"></i>
-											</Link>
+											<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">What is it?</h4>
+											{project.descriptionComponent ?? (
+												<p className="text-sm sm:text-base text-gray-200">{project.descriptionLong}</p>
+											)}
+											{/* <p className="text-sm sm:text-base text-gray-200">{project.descriptionLong}</p> */}
 										</div>
-									)}
-								</div>
+										<div>
+											<h4 className="text-base sm:text-lg font-semibold mb-2 sm:mb-3">Technology used</h4>
+											<div className="flex flex-wrap gap-2">
+												{project.tech.map((tech, i) => (
+													<span key={i} className="text-sm px-3 py-1 bg-white/10 hover:bg-white/20 rounded-full">
+														{tech}
+													</span>
+												))}
+											</div>
+										</div>
+										{project.link && (
+											<div>
+												<Link href={project.link} className="text-sm px-4 py-2 border hover:bg-white/20 rounded-full transition-colors">
+													View Project <i className="fa-solid fa-arrow-right"></i>
+												</Link>
+											</div>
+										)}
+									</div>
 
 									{project.slides.length > 1 ? (
 										<div className="relative h-full min-h-[300px] lg:min-h-full">
 											<div className="flex items-center justify-center h-full">
-												<EmblaCarousel slides={project.slides} options={{loop: true}}/>
+												<EmblaCarousel slides={project.slides} options={{ loop: true }} />
 												<div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_bottom,_#0a0d18_0%,_transparent_10%,_transparent_90%,_#0a0d18_100%)] lg:bg-[linear-gradient(to_right,_#0a0d18_0%,_transparent_10%,_transparent_90%,_#0a0d18_100%)]"></div>
 											</div>
 										</div>
@@ -342,16 +424,17 @@ export default function ProjectsSection() {
 												/>
 											</div>
 											// <Image src={project.slides[0]} alt={project.title} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
-										) :  (
+										) : (
 											<div className="embla__slide" key={index}></div>
 										)
 									)}
-								{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0d18] via-transparent to-transparent lg:via-[#0a0d18]/20 lg:to-[#0a0d18]/40"></div> */}
+									{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0d18] via-transparent to-transparent lg:via-[#0a0d18]/20 lg:to-[#0a0d18]/40"></div> */}
+								</div>
 							</div>
-						</div>
-					</motion.div>
-					)})}
-				</div>
+						</motion.div>
+					)
+				})}
+			</div>
 		</section>
 	);
 }
