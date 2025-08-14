@@ -265,26 +265,12 @@ const techCategories = [
 	{ label: 'Java', value: 'java' },
 	{ label: 'Python', value: 'python' },
 	{ label: 'Rust', value: 'rust' },
-	{ label: 'HTML/CSS/JS', value: 'web' },
+	{ label: 'Web', value: 'web' },
 ];
 
 export default function ProjectsSection() {
-	const [selectedTechs, setSelectedTechs] = useState<string[]>(['all']);
+	const [selectedTech, setSelectedTech] = useState('all');
 
-	const handleCheckboxChange = (value: string) => {
-		if (value === 'all') {
-			// Selecting "All" clears others and shows everything
-			setSelectedTechs(['all']);
-		} else {
-			let newSelected = selectedTechs.includes(value)
-				? selectedTechs.filter(v => v !== value)
-				: [...selectedTechs.filter(v => v !== 'all'), value];
-
-			setSelectedTechs(newSelected.length ? newSelected : ['all']);
-		}
-	};
-
-	// Map filter values to actual tech keywords
 	const techMap: Record<string, string[]> = {
 		'c-cpp': ['c', 'c++'],
 		'csharp': ['c#'],
@@ -295,12 +281,10 @@ export default function ProjectsSection() {
 	};
 
 	const filteredProjects = projects.filter(project => {
-		if (selectedTechs.includes('all')) return true;
+		if (selectedTech === 'all') return true;
 		return project.tech?.some(t =>
-			selectedTechs.some(selected =>
-				techMap[selected]?.some(keyword =>
-					t.toLowerCase() === keyword
-				)
+			techMap[selectedTech]?.some(keyword =>
+				t.toLowerCase() === keyword
 			)
 		);
 	});
@@ -335,10 +319,11 @@ export default function ProjectsSection() {
 							className="cursor-pointer"
 						>
 							<input
-								type="checkbox"
+								type="radio"
+								name="tech"
 								className="peer hidden"
-								checked={selectedTechs.includes(cat.value)}
-								onChange={() => handleCheckboxChange(cat.value)}
+								checked={selectedTech === cat.value}
+								onChange={() => setSelectedTech(cat.value)}
 							/>
 							<span className="
 								px-4 py-1 rounded-full text-white bg-white/10
