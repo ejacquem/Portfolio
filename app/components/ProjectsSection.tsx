@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import EmblaCarousel from './EmblaCarousel';
 import '@fortawesome/fontawesome-free/css/all.min.css';
-import { projects } from './ProjectsData';
+import { projects, Project } from './ProjectsData';
 
 const getTeamIcon = (teamSize: number) => {
 	if (teamSize === 1)
@@ -44,7 +44,7 @@ function ProjectMedia({ slides, title }: { slides: string[]; title: string }) {
 	{/* <div className="pointer-events-none absolute inset-0 bg-gradient-to-b lg:bg-gradient-to-r from-[#0a0d18] via-transparent to-transparent lg:via-[#0a0d18]/20 lg:to-[#0a0d18]/40"></div> */ }
 }
 
-function ProjectCard({ project, index }: { project: any; index: number }) {
+function ProjectCard({ project, index }: { project: Project; index: number }) {
 	const { icon, label } = getTeamIcon(project.teamSize);
 	return (
 

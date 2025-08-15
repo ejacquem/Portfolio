@@ -31,23 +31,24 @@ const shaderDescription = (
 	</p>
 )
 
-// type Project = {
-// 	title: string;
-// 	type: ProjectType;
-// 	description: string;
-// 	descriptionLong: string;
-// 	slides: string[];
-// 	link: string;
-// 	tech: string[];
-// 	teamSize: number;
-// };
-
 enum ProjectType {
 	School = '42 Project',
 	Personal = 'Personal Project',
 }
 
-export const projects = [
+export type Project = {
+	title: string;
+	type: ProjectType;
+	description: string;
+	descriptionLong: string;
+	slides: string[];
+	link: string;
+	tech: string[];
+	teamSize: number;
+	descriptionComponent?: React.ReactNode;
+};
+
+export const projects: Project[] = [
 	{
 		title: 'Transcendance',
 		type: ProjectType.School,
@@ -228,6 +229,19 @@ export const projects = [
 		link: '',
 		tech: ['C++', 'Makefile'],
 		teamSize: 2,
+	},
+	{
+		title: 'Fractal Generator',
+		type: ProjectType.Personal,
+		description: 'Interactive Fractal Rendering in Java',
+		descriptionLong: 'Fractal Generator is a Java application for creating and exploring 1.x dimension fractals through \
+		three methods: Koch, Tree (simple and advanced), and L-System. It offers presets, random generation, saving/loading, \
+		animation, and extensive customization of fractal parameters. Users can generate trees, spirals, and geometric patterns, \
+		zoom, adjust angles, and render high-resolution PNG outputs for artistic or mathematical exploration.',
+		slides: ['FG_Presentation.png', 'FG_Koch_CurveEnhanced.png', 'FG_Classic.png', 'FG_Beech.png', 'FG_Fern.png', 'FG_Flower.png', 'FG_Spiral.png'],
+		link: 'https://github.com/ejacquem/Fractal-Generator',
+		tech: ['Java', 'Java Swing', 'Eclipse'],
+		teamSize: 1,
 	},
 	{
 		title: 'Portfolio',
