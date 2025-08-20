@@ -86,6 +86,18 @@ export const projects: Project[] = [
 		teamSize: 2,
 	},
 	{
+		title: 'Exolegend',
+		type: ProjectType.Personal,
+		description: 'AI Bot for Real-Time Maze Arena in Hackathon',
+		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
+		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
+		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
+		slides: ['Exolegend.gif', 'Exolegend_Robot.jpg', 'Exolegend_Arena.png'],
+		link: 'https://github.com/ejacquem/exolegend',
+		tech: ['C++'],
+		teamSize: 3,
+	},
+	{
 		title: 'Webserv',
 		type: ProjectType.School,
 		description: 'HTTP Server in C++98 with CGI Support',
@@ -171,18 +183,6 @@ export const projects: Project[] = [
 		link: 'https://github.com/ejacquem/malloc',
 		tech: ['C', 'Makefile'],
 		teamSize: 1,
-	},
-	{
-		title: 'Exolegend',
-		type: ProjectType.Personal,
-		description: 'AI Bot for Real-Time Maze Arena in Hackathon',
-		descriptionLong: 'Exolegend was developed during a 72-hour hackathon where we programmed autonomous bots in C++ \
-		to navigate a shrinking maze, collect bombs, and engage in combat. I focused on pathfinding algorithms, \
-		heuristic-based decisions, and real-time strategy planning. We ranked 8th out of 50 teams.',
-		slides: ['Exolegend.gif', 'Exolegend_Robot.jpg', 'Exolegend_Arena.png'],
-		link: 'https://github.com/ejacquem/exolegend',
-		tech: ['C++'],
-		teamSize: 3,
 	},
 	{
 		title: 'Cub3D',
