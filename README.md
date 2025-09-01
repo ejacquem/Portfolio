@@ -1,1 +1,3 @@
 This portfolio showcases the most significant projects I&apos;ve completed during my learning journey. I&apos;ve used and modified a template from [Dev Portfolio Templates](https://www.devportfoliotemplates.com/).
+
+Visit the portfolio at [ljacquem.dev](https://ljacquem.dev)
