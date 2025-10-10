@@ -61,16 +61,16 @@ export const projects: Project[] = [
 		teamSize: 3,
 	},
 	{
-		title: 'Aimcore',
-		type: ProjectType.Personal,
-		description: 'Multiplayer Survival Arena Shooter',
-		descriptionLong: 'Aimcore is a fast-paced multiplayer game about surviving waves of enemies with increasing difficulty.\
-		The game is built with the Unity engine and implements various AI algorithms for the enemies, a main menu, visual and sound effects and a highscore system.\
-		We used Fusion 2 for the networking wich helped us implement lag compensation methdods to ensure smooth gameplay.',
-		slides: ['Aimcore_Menu.png', 'Aimcore_Game.png', 'Aimcore_GameOver.png'],
-		link: 'https://siul008.itch.io/aimcore',
-		tech: ['C#', 'Unity', 'Blender', 'Audacity', 'Photon', 'Fusion 2'],
-		teamSize: 2,
+		title: 'Gomoku',
+		type: ProjectType.School,
+		description: 'AI-Powered Strategy Board Game',
+		descriptionLong: 'This project focuses on developing an intelligent AI for the classic Gomoku game. It serves as both a powerful tool for analyzing optimal \
+		moves and a user-friendly platform to play against the AI or another player. Built with Java and JavaFX, it combines strategic computation with an intuitive \
+		interface, delivering a seamless and engaging gameplay experience.',
+		slides: ['GomokuGame.gif', 'GomokuGameDebug.gif', 'GomokuDebug.png'],
+		link: '',
+		tech: ['Java', 'Javafx', 'Makefile', 'CSS', 'Multithreading'],
+		teamSize: 1,
 	},
 	{
 		title: '42 Luxembourg Leaderboard',
@@ -142,6 +142,18 @@ export const projects: Project[] = [
 		link: 'https://ejacquem.itch.io/elements-keeper',
 		tech: ['C#', 'Unity', 'Krita', 'Audacity', 'FL Studio'],
 		teamSize: 3,
+	},
+	{
+		title: 'Aimcore',
+		type: ProjectType.Personal,
+		description: 'Multiplayer Survival Arena Shooter',
+		descriptionLong: 'Aimcore is a fast-paced multiplayer game about surviving waves of enemies with increasing difficulty.\
+		The game is built with the Unity engine and implements various AI algorithms for the enemies, a main menu, visual and sound effects and a highscore system.\
+		We used Fusion 2 for the networking wich helped us implement lag compensation methdods to ensure smooth gameplay.',
+		slides: ['Aimcore_Menu.png', 'Aimcore_Game.png', 'Aimcore_GameOver.png'],
+		link: 'https://siul008.itch.io/aimcore',
+		tech: ['C#', 'Unity', 'Blender', 'Audacity', 'Photon', 'Fusion 2'],
+		teamSize: 2,
 	},
 	{
 		title: 'Shaderpixel',
