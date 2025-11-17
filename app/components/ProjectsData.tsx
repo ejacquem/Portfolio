@@ -34,6 +34,7 @@ const shaderDescription = (
 enum ProjectType {
 	School = '42 Project',
 	Personal = 'Personal Project',
+	Freelance = 'Freelance Mission',
 }
 
 export type Project = {
@@ -59,6 +60,19 @@ export const projects: Project[] = [
 		link: '',
 		tech: ['Python', 'Django', 'HTML', 'CSS', 'JS', 'Bootstrap', 'Three.js', 'SQL'],
 		teamSize: 3,
+	},
+	{
+		title: 'Vroome',
+		type: ProjectType.Freelance,
+		description: 'Geo-Localized Clustering System for Cross-Border Workers',
+		descriptionLong: 'Freelance mission for Vroome.lu where I built a full-stack application to cluster cross-border workers based on travel routes and schedules. \
+The system generates datasets, displays users and travels, finds neighboring routes, and computes clusters per day using spatial and temporal proximity. \
+Because the problem is NP-hard, I combined DBSCAN and K-Means to split large datasets before applying OR-Tools\' CP-SAT solver for optimal subgrouping. \
+The frontend (Angular) handles visualization using Leaflet and vis.js, while the backend (Java Spring Boot + Hibernate, PostgreSQL) exposes API endpoints for clustering and data generation. Everything runs in Docker with Adminer for database inspection.',
+		slides: ['Vroome/Vroome_Graph.png', 'Vroome/Vroome_Data.png', 'Vroome/Vroome_User.png'],
+		link: '',
+		tech: ['Angular', 'Typescript', 'Leaflet', 'vis.js', 'Java', 'Spring Boot', 'Hibernate', 'PostgreSQL', 'Docker'],
+		teamSize: 1,
 	},
 	{
 		title: 'Gomoku',
