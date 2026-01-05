@@ -51,17 +51,6 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
-		title: 'Transcendance',
-		type: ProjectType.School,
-		description: 'Full-Stack Online Multiplayer Web Game',
-		descriptionLong: 'Transcendance is a multiplayer Pong game featuring real-time client-server communication via WebSockets to ensure synchronized gameplay. \
-		The frontend is made with JavaScript and Three.js for immersive 3D rendering, while the backend is made with Python and Django to manage real-time game logic and user authentication seamlessly.',
-		slides: ['Pong.gif', 'Pong_Home.png', 'Pong_Games.png', 'Pong_Customize.png', 'Pong_Dashboard.png', 'Pong_Inverted_Blue.png', 'Pong_Red.png'],
-		link: '',
-		tech: ['Python', 'Django', 'HTML', 'CSS', 'JS', 'Bootstrap', 'Three.js', 'SQL'],
-		teamSize: 3,
-	},
-	{
 		title: 'Vroome',
 		type: ProjectType.Freelance,
 		description: 'Geo-Localized Clustering System for Cross-Border Workers',
@@ -73,6 +62,17 @@ The frontend (Angular) handles visualization using Leaflet and vis.js, while the
 		link: '',
 		tech: ['Angular', 'Typescript', 'Leaflet', 'vis.js', 'Java', 'Spring Boot', 'Hibernate', 'PostgreSQL', 'Docker'],
 		teamSize: 1,
+	},
+	{
+		title: 'Transcendance',
+		type: ProjectType.School,
+		description: 'Full-Stack Online Multiplayer Web Game',
+		descriptionLong: 'Transcendance is a multiplayer Pong game featuring real-time client-server communication via WebSockets to ensure synchronized gameplay. \
+		The frontend is made with JavaScript and Three.js for immersive 3D rendering, while the backend is made with Python and Django to manage real-time game logic and user authentication seamlessly.',
+		slides: ['Pong.gif', 'Pong_Home.png', 'Pong_Games.png', 'Pong_Customize.png', 'Pong_Dashboard.png', 'Pong_Inverted_Blue.png', 'Pong_Red.png'],
+		link: '',
+		tech: ['Python', 'Django', 'HTML', 'CSS', 'JS', 'Bootstrap', 'Three.js', 'SQL'],
+		teamSize: 3,
 	},
 	{
 		title: 'Gomoku',
